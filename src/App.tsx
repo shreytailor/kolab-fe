@@ -12,8 +12,9 @@ function App() {
         <img src={logo} className="logo" alt="kolab-logo" />
       </div>
 
-      <div className="banner">
-        <img src={backdrop} />
+      <div className="hero-container">
+        <img className="backdrop" src={backdrop} alt="hero-backdrop" />
+        <h3>An effective student <br/> collaboration tool.</h3>
       </div>
 
     </div>
