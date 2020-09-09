@@ -17,6 +17,7 @@ function App() {
       <div className="marginated">
         <div className="header-bar">
           <img src={logo} className="logo" alt="kolab-logo" />
+          <button className="signin-button">Sign In</button>
         </div>
 
         <div className="hero-container">
