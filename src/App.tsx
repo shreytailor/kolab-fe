@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './App.css';
-import {useScript} from "./hooks/useScript";
+import useScript from "./hooks/useScript";
 import logo from "./resources/logo.png";
 import backdrop from "./resources/avcol.jpeg";
 
