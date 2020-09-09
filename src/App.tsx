@@ -4,6 +4,8 @@ import './App.css';
 import useScript from "./hooks/useScript";
 import logo from "./resources/logo.png";
 import backdrop from "./resources/avcol.jpeg";
+import faviconfooter from "./resources/favicon_footer.png";
+import logofooter from "./resources/logo_footer.png";
 
 function App() {
   useScript("https://platform.twitter.com/widgets.js");
@@ -49,7 +51,13 @@ function App() {
         </div>
       </div>
 
-      <div className="footer"></div>
+      <div className="footer">
+        <div className="logos-bounder">
+          <img className="favicon" src={faviconfooter} />
+          <img className="logo" src={logofooter} />
+        </div>
+        <p className="credit">Developed by Shrey Tailor.</p>
+      </div>
     </div>
   );
 }
