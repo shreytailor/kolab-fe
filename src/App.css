@@ -11,7 +11,7 @@
 */
 .header-bar {
   display: flex;
-  padding: 50px 0px 50px 0px;
+  padding: 50px 0px 30px 0px;
 }
 
 .logo {
@@ -22,19 +22,8 @@
 /* 
   Styling for the hero.
 */
-.hero-container h3 {
-  left: 0rem;
-  position: absolute;
-  line-height: 4rem;
-
-  color: white;
-  font-size: 3.5rem;
-  font-weight: 700;
-  padding: 0px 40px 0px 40px;
-}
-
 .hero-container {
-  margin-top: 10px;
+  margin: 30px 0px 30px 0px;
   width: 100%;
   height: 30rem;
   background-color: #6c618b;
@@ -48,12 +37,54 @@
   justify-content: center;
 }
 
+.hero-container h1 {
+  left: 0rem;
+  position: absolute;
+  line-height: 4rem;
+
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 700;
+  padding: 0px 40px 0px 40px;
+}
+
 .hero-container .backdrop {
   opacity: 0.2;
   height: auto;
   min-width: 100%;
 }
 
+
+/* Styling for different body sections. */
+.body {
+  margin: 90px 0px 90px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.body .section {
+  padding: 35px 0px 35px 0px;
+  display: flex;
+  max-width: 40rem;
+  align-items: center;
+  flex-direction: column;
+}
+
+.body .section .title {
+  color: #3c2d66;
+  font-size: 1.5rem;
+  padding-bottom: 0.6rem;
+}
+
+.body .section .details {
+  font-size: 1.15rem;
+  line-height: 1.7rem;
+}
+
+.body .section .details li {
+  padding-bottom: 1rem;
+}
 
 
 
@@ -68,7 +99,7 @@
     padding: 0px 130px 0px 130px;
   }
 
-  .hero-container h3 {
+  .hero-container h1 {
     font-size: 3rem;
     line-height: 3.5rem;
   }
@@ -79,7 +110,7 @@
     padding: 0px 100px 0px 100px;
   }
 
-  .hero-container h3 {
+  .hero-container h1 {
     font-size: 2.5rem;
     line-height: 3rem;
   }
@@ -96,8 +127,12 @@
     padding: 0px 40px 0px 40px;
   }
 
-  .hero-container h3 {
+  .hero-container h1 {
     font-size: 2rem;
     line-height: 2.5rem;
+  }
+
+  .body .section .details {
+    font-size: 1.05rem;
   }
 }
