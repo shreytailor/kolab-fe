@@ -29,7 +29,7 @@
   }
   
   .header-bar .signin-button {
-    width: 7.5rem;
+    width: 6.5rem;
     height: 2.5rem;
     cursor: pointer;
   
@@ -38,14 +38,15 @@
     color: white;
     outline: none;
     font-size: 0.9rem;
-    font-weight: 400;
+    font-weight: 700;
+    border-radius: 0.2rem;
     background: #2A3FB4;
-    transition: transform 0.1s linear;
+    transition: all 0.1s linear;
   }
   
   .header-bar .signin-button:hover {
-    transform: translateY(0.2rem);
-    background: #374cc4;
+    background: #1f3196;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
   
   
