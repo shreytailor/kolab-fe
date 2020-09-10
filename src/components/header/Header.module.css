@@ -1,0 +1,28 @@
+/* 
+---------------------------------------- 
+            HEADER STYLES
+---------------------------------------- 
+*/
+.headerbar {
+    padding: 50px 0px 50px 0px ;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+}
+
+.logo {
+    width: 5rem;
+}
+
+.backarrow {
+    left: 0%;
+    height: 2rem;
+    position: absolute;
+
+    /* React link component disturbed this component's position to used this fix. */
+    top: 50%;
+    transform: translateY(-50%);
+}
