@@ -4,7 +4,7 @@ import { useEffect } from 'react';
  * This hook is used to load a JavaScript script into the page.
  * @param url the location of the script that you want to load.
  */
-const useScript =  (url) => {
+const useScript =  (url: string) => {
     useEffect(() =>  {
         const script = document.createElement('script');
 
