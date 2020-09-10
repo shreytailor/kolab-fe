@@ -183,14 +183,14 @@
 }
 
 @media (max-width: 1200px) {
-  .hero-container h1 {
+  .herocontainer h1 {
     font-size: 2.5rem;
     line-height: 3rem;
   }
 }
 
 @media (max-width: 650px) {
-  .hero-container h1 {
+  .herocontainer h1 {
     font-size: 2rem;
     line-height: 2.5rem;
   }
