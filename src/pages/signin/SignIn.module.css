@@ -1,0 +1,62 @@
+/* 
+---------------------------------------- 
+            SIGN IN STYLES
+---------------------------------------- 
+*/
+.signinflex {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* background-color: red; */
+}
+
+.signinflex .signincontainer {
+    padding: 60px 70px 60px 70px;
+    max-width: 50rem;
+
+    background-color: white;
+    box-shadow: 0px 3px 15px rgba(180, 180, 180, 0.2);
+}
+
+.signinflex .signincontainer .heading {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.signinflex .signincontainer p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 1.3rem;
+}
+
+.signinflex .signincontainer .buttonbox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* 
+  ---------------------------------------- 
+              MEDIA QUERIES
+  ---------------------------------------- 
+*/
+@media (max-width: 950px) {
+    .signinflex .signincontainer {
+        padding: 60px 50px 60px 50px;
+    }
+}
+
+@media (max-width: 750px) {
+    .signinflex .signincontainer {
+        padding: 60px 30px 60px 30px;
+    }
+
+    .signinflex .signincontainer p {
+        font-size: 1rem;
+    }
+}

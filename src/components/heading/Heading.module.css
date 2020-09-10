@@ -1,0 +1,10 @@
+/* 
+---------------------------------------- 
+            HEADING STYLES
+---------------------------------------- 
+*/
+.Heading .string {
+    display: inline-block;
+    text-align: center;
+    color: #272727;
+}

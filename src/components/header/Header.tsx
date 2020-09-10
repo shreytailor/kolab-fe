@@ -15,21 +15,24 @@ import backarrow from './../../resources/backarrow.svg';
     Component Props Requirements.
 */
 type HeaderProps = {
+    className ?: string
     backButton ?: boolean
 }
 
 
-function Header({backButton} : HeaderProps) {
+function Header({className, backButton} : HeaderProps) {
     return (
-        <div className={styles.Header}>
-            <div className={styles.headerbar}>
-                {
-                    backButton &&
-                    <Link to="/">
-                        <img className={styles.backarrow} src={backarrow} />
-                    </Link>
-                }
-                <img className={styles.logo} src={logo} />
+        <div className={className}>
+            <div className={styles.Header}>
+                <div className={styles.headerbar}>
+                    {
+                        backButton &&
+                        <Link to="/">
+                            <img className={styles.backarrow} src={backarrow} />
+                        </Link>
+                    }
+                    <img className={styles.logo} src={logo} />
+                </div>
             </div>
         </div>
     )
