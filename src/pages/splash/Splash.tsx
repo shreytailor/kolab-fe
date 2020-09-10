@@ -31,7 +31,7 @@ function Splash() {
                 </div>
 
                 <div className={styles.herocontainer}>
-                    <img className={styles.backdrop} src={backdrop} alt="hero-backdrop" />
+                    <div className={styles.backdrop}></div>
                     <h1>An effective student <br/> collaboration tool.</h1>
                 </div>
 
