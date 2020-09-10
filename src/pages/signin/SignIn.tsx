@@ -3,7 +3,7 @@
 */
 import React from 'react';
 import './../../App.css';
-import { GoogleLogin, GoogleLoginResponse, GoogleLoginResponseOffline } from 'react-google-login';
+import { GoogleLogin } from 'react-google-login';
 import styles from './SignIn.module.css';
 
 /*
@@ -36,6 +36,7 @@ function Login() {
                     </div>
                 </div>
             </div>
+            <div id="testing"></div>
         </div>
     )
 }

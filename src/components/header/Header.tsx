@@ -28,10 +28,10 @@ function Header({className, backButton} : HeaderProps) {
                     {
                         backButton &&
                         <Link to="/">
-                            <img className={styles.backarrow} src={backarrow} />
+                            <img className={styles.backarrow} src={backarrow} alt="back-button"/>
                         </Link>
                     }
-                    <img className={styles.logo} src={logo} />
+                    <img className={styles.logo} src={logo} alt="kolab-logo"/>
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ import { GoogleLoginResponse, GoogleLoginResponseOffline } from 'react-google-lo
  */
 function successfulLogin(response: GoogleLoginResponse | GoogleLoginResponseOffline) {
     // Casting was required for the response, because of some errors that took long time to fix.
-    const castedObject = <GoogleLoginResponse>response;
+    const castedObject = response as GoogleLoginResponse;
 
     // Checking with the back-end whether the token retrieved was valid or not.
     console.log(castedObject.getAuthResponse().id_token);

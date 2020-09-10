@@ -11,7 +11,6 @@ import styles from './Splash.module.css';
 */
 import useScript from "./../../hooks/useScript";
 import logo from "./../../resources/logo.png";
-import backdrop from "./../../resources/avcol.jpeg";
 import faviconfooter from "./../../resources/favicon_footer.png";
 import logofooter from "./../../resources/logo_footer.png";
 
@@ -37,18 +36,20 @@ function Splash() {
 
                 <div className={styles.body}>
                     <div className={styles.section}>
-                        <h2 className={styles.title}>Why Kolab? 🤔</h2>
+                        <h2 className={styles.title}>Why Kolab? <span role="img" aria-label="thinking-emoji">🤔</span></h2>
                         <p className={styles.details}>Kolab is a very unique collaborative platform, as it helps students to quickly get assistance from their peers. It's simplistic interface ensures that students are always motivated and onto their tasks.</p>
                     </div>
                     <div className={styles.section}>
-                        <h2 className={styles.title}>Key Features 📖</h2>
+                        <h2 className={styles.title}>Key Features <span role="img" aria-label="book-emoji">📖</span></h2>
                         <p className={styles.details}>
-                            <li><b>Anonymous</b> - maintaining your anonymity as a questioner, or even when answering questions. These are safe measures to avoid any cyber-bullying.</li>
-                            <li><b>Discussions</b> - the ability for students to have further discussions on the same thread, if they have any more queries.</li>
+                            <ul>
+                                <li><b>Anonymous</b> - maintaining your anonymity as a questioner, or even when answering questions. These are safe measures to avoid any cyber-bullying.</li>
+                                <li><b>Discussions</b> - the ability for students to have further discussions on the same thread, if they have any more queries.</li>
+                            </ul>
                         </p>
                     </div>
                     <div className={styles.section}>
-                        <h2 className={styles.title}>Share with others! 🎉</h2>
+                        <h2 className={styles.title}>Share with others! <span role="img" aria-label="popper-emoji">🎉</span></h2>
                         <p className={styles.details}>If you like our concept and think it'd be helpful for more students around the world, please don't forget to spread the word.</p>
                         <div className={styles.sociallinks}>
                         <div className={styles.link}>
@@ -64,8 +65,8 @@ function Splash() {
 
             <div className={styles.footer}>
                 <div className={styles.logobounder}>
-                    <img className={styles.favicon} src={faviconfooter} />
-                    <img className={styles.logo} src={logofooter} />
+                    <img className={styles.favicon} src={faviconfooter} alt="kolab-favicon"/>
+                    <img className={styles.logo} src={logofooter} alt="kolab-logo"/>
                 </div>
                 <p className={styles.credit}>Developed by Shrey Tailor.</p>
             </div>
