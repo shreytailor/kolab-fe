@@ -18,8 +18,6 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
-  env:
-    REACT_APP_CLIENT_ID: '$(client_id)'
 
 - script: |
     cd $(rootDir)
@@ -27,6 +25,8 @@ steps:
     npm run build
     cd ..
   displayName: 'npm install and build'
+  env:
+    REACT_APP_CLIENT_ID: '$(client_id)'
 
 - task: ArchiveFiles@2
   inputs:
