@@ -1,0 +1,37 @@
+/* 
+---------------------------------------- 
+            DASHBOARD STYLES
+---------------------------------------- 
+*/
+.dashactions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.dashactions p{
+    font-size: 1.1rem;
+}
+
+.dashactions .signoutbutton {
+    width: 6.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    margin-left: 2rem;
+
+    /* Overriding the default button CSS properties. */
+    border: none;
+    color: white;
+    outline: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 0.2rem;
+    background: #2A3FB4;
+    transition: all 0.1s linear;
+}
+
+.dashactions .signoutbutton:hover {
+    background: #1f3196;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}

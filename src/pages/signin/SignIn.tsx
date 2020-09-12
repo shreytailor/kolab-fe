@@ -18,6 +18,8 @@ import Heading from './../../components/heading/Heading';
 
 
 function Login() {
+    window.history.replaceState(null, "Kolab - Sign In");
+
     // Using state to tell if the user is currently logged in or not.
     const cookies = new Cookies();
     const [ loginState, setLoginState ] = useState(Boolean);
