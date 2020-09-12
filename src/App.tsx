@@ -10,6 +10,7 @@ import './App.css';
 */
 import Splash from './pages/splash/Splash';
 import SignIn from './pages/signin/SignIn';
+import Dashboard from './pages/dashboard/Dashboard';
 
 
 /**
@@ -21,6 +22,7 @@ function App() {
       <Router>
         <Route exact path="/" component={Splash}/>
         <Route exact path="/signin" component={SignIn}/>
+        <Route exact path="/dashboard" component={Dashboard}/>
       </Router>
     </div>
   );
