@@ -3,6 +3,7 @@ import jwt_decode from 'jwt-decode';
 import Cookies from 'universal-cookie';
 import { Redirect } from 'react-router-dom';
 import './../../App.css';
+import Header from '../../components/header/Header';
 
 function Dashboard() {
     const cookies = new Cookies();
@@ -23,7 +24,7 @@ function Dashboard() {
 
     return (
         <div className="globalpadding">
-            <p>Hello there!</p>
+            <Header />
         </div>
     )
 }

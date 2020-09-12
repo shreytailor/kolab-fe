@@ -38,18 +38,17 @@ function Login() {
     function successfulLogin(response:GoogleLoginResponse|GoogleLoginResponseOffline) {
         // Casting was required for the response, because of some errors that took long time to fix.
         const castedObject = response as GoogleLoginResponse;
-        const tokenId = castedObject.getAuthResponse().id_token;
-        console.log(tokenId);
+        const retrievedToken = castedObject.getAuthResponse().id_token;
 
         // Checking with the back-end whether the token retrieved was valid or not.
         axios.post(`${process.env.REACT_APP_API}/tokenId/validate`, {
-            tokenId: tokenId
-        }).then(function(response) {
-
+            tokenId: retrievedToken
+        })
+        .then(function(response) {
             // If the token was valid, then we set a cookie that contains the Token ID.
             if (response.data.status === 200) {
                 const cookieObject = {
-                    tokenId: tokenId,
+                    tokenId: retrievedToken,
                     name: response.data.name,
                     email: response.data.email
                 }
@@ -60,6 +59,9 @@ function Login() {
                 return <Redirect to = "/dashboard" />
             }
 
+        })
+        .catch(function(error) {
+            console.log(error);
         });
     }
 
