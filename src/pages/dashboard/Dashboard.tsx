@@ -14,6 +14,7 @@ import './../../App.css';
 import Header from '../../components/header/Header';
 import styles from './Dashboard.module.css';
 import PostInput from '../../components/postinput/PostInput';
+import Heading from '../../components/heading/Heading';
 
 
 function Dashboard() {
@@ -59,6 +60,8 @@ function Dashboard() {
             {isInputShowing &&
                 <PostInput listener={setIsInputShowing} />
             }
+
+            <Heading className={styles.heading} string="All Questions" fontsize="1.5rem" />
         </div>
     )
 }

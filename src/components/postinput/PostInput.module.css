@@ -12,7 +12,7 @@
 }
 
 .root .inputarea {
-    width: 80%;
+    width: 60%;
     height: 8rem;
     font-size: 1.12rem;
     padding: 1rem;
@@ -21,6 +21,7 @@
     outline: none;
     border: 1px solid #D3D3D3;
     border-radius: 0.2rem;
+    white-space: pre-line;
 }
 
 .root .actions {
@@ -45,6 +46,24 @@
             MEDIA QUERIES
 ---------------------------------------- 
 */
+@media (max-width: 1500px) {
+    .root .inputarea {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .root .inputarea {
+        width: 90%;
+    }
+}
+
+@media (max-width: 800px) {
+    .root .inputarea {
+        width: 100%;
+    }
+}
+
 @media (max-width: 650px) {
     .root .inputarea {
         font-size: 1rem;
