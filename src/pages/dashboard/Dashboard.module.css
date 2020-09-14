@@ -12,26 +12,55 @@
 
 .dashactions p{
     font-size: 1.1rem;
+    margin-right: 1rem;
 }
 
-.dashactions .signoutbutton {
-    width: 6.5rem;
+.dashactions .buttons {
+    display: flex;
+}
+
+.dashactions .buttons .signoutbutton {
+    background-color: #2A3FB4;
+    color: white;
+}
+
+.dashactions .buttons .postbutton {
+    background-color: #D3D3D3;
+    color: #484848;
+}
+
+.dashactions .buttons .signoutbutton, .dashactions .buttons .postbutton {
+    padding: 0rem 1rem 0rem 1rem;
     height: 2.5rem;
     cursor: pointer;
-    margin-left: 2rem;
+    margin-left: 0.5rem;
 
     /* Overriding the default button CSS properties. */
     border: none;
-    color: white;
     outline: none;
     font-size: 0.9rem;
     font-weight: 700;
     border-radius: 0.2rem;
-    background: #2A3FB4;
     transition: all 0.1s linear;
 }
 
-.dashactions .signoutbutton:hover {
-    background: #1f3196;
+.dashactions .buttons .signoutbutton:hover, .dashactions .buttons .postbutton:hover {
+    filter: brightness(85%);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+
+/* 
+---------------------------------------- 
+            MEDIA QUERIES
+---------------------------------------- 
+*/
+@media (max-width: 650px) {
+    .dashactions {
+        flex-direction: column;
+    }
+
+    .dashactions p {
+        margin: 0rem 0rem 1rem 0rem;
+    }
 }

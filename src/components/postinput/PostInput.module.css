@@ -1,0 +1,52 @@
+/* 
+---------------------------------------- 
+            POST INPUT STYLES
+---------------------------------------- 
+*/
+.root {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2.5rem 0rem 2.5rem 0rem;
+}
+
+.root .inputarea {
+    width: 80%;
+    height: 8rem;
+    font-size: 1.12rem;
+    padding: 1rem;
+    resize: none;
+    font-family: inherit;
+    outline: none;
+    border: 1px solid #D3D3D3;
+    border-radius: 0.2rem;
+}
+
+.root .actions {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+
+.root .actions .action {
+    margin: 0rem 0.5rem 0rem 0.5rem;
+    color: rgb(36, 115, 168);
+}
+
+.root .actions .action:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/* 
+---------------------------------------- 
+            MEDIA QUERIES
+---------------------------------------- 
+*/
+@media (max-width: 650px) {
+    .root .inputarea {
+        font-size: 1rem;
+    }
+}
