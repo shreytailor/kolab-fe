@@ -1,7 +1,6 @@
 /*
     React Imports (including stylesheets).
 */
-import jwt_decode from 'jwt-decode';
 import Cookies from 'universal-cookie';
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
@@ -25,14 +24,13 @@ function Dashboard() {
     const cookies = new Cookies();
     let history = useHistory();
     let tokenId : string;
+    
     try {
         tokenId = cookies.get("loginDets")["tokenId"];
-        console.log(tokenId);
     } catch (error) {
         return <Redirect to = "/signin"/>
     }
     try {
-        console.log(jwt_decode(tokenId));
     } catch (error) {
         return <Redirect to = "/signin"/>
     }
@@ -45,11 +43,11 @@ function Dashboard() {
         <div className="globalpadding">
             <Header />
             <div className={styles.dashactions}>
-                <p>Welcome {name.split(" ")[0]}!</p>
+                <p className={styles.greeting}>Welcome {name}!</p>
                 <div className={styles.buttons}>
                     <button onClick={(event) => {
                         setIsInputShowing(true);
-                    }} className={styles.postbutton}>Post Question</button>
+                    }} className={styles.postbutton}>Post</button>
                     <button onClick={() => {
                         cookies.remove("loginDets");
                         history.push("/");
@@ -61,7 +59,9 @@ function Dashboard() {
                 <PostInput listener={setIsInputShowing} />
             }
 
-            <Heading className={styles.heading} string="All Questions" fontsize="1.5rem" />
+            <div className={styles.questions}>
+                <Heading className={styles.heading} string="Peer Questions" fontsize="1.5rem" />
+            </div>
         </div>
     )
 }

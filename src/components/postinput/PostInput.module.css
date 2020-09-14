@@ -33,6 +33,7 @@
 .root .actions .action {
     margin: 0rem 0.5rem 0rem 0.5rem;
     color: rgb(36, 115, 168);
+    user-select: none;
 }
 
 .root .actions .action:hover {
