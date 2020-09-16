@@ -4,5 +4,48 @@
 ---------------------------------------- 
 */
 .QuestionCard {
+        width: 100%;
+        position: relative;
+        background-color: white;
+        padding: 1.2rem 1rem 1.2rem 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0px 3px 15px rgba(0,0,0,0.15);
+        font-size: 1.1rem;
+}
 
+.QuestionCard .green, .QuestionCard .red {
+        position: absolute;
+        top: 0;
+        left: 0;        
+        height: 100%;
+        width: 0.5rem;
+}
+
+.QuestionCard .green {
+        background-color: rgb(106, 197, 106);
+}
+
+.QuestionCard .red {
+        background-color: rgb(206, 123, 123);
+}
+
+.QuestionCard .verticalFlex {
+        display: flex;
+        flex-direction: column;
+}
+
+.QuestionCard .verticalFlex .questionBox {
+        max-height: 5rem;
+        overflow: hidden;
+        line-height: 1.3rem;
+}
+
+.QuestionCard .verticalFlex .dynamicContent {
+        margin: 1rem 0rem 1rem 0rem;
+}
+
+.QuestionCard .verticalFlex .haveAnAnswer {
+        color: rgb(83, 165, 83);
 }

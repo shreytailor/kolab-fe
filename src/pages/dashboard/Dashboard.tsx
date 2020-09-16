@@ -83,7 +83,7 @@ function Dashboard() {
                     }} className={styles.signoutbutton}>Sign Out</button>
                 </div>
             </div>
-            
+
             {isInputShowing &&
                 <PostInput listener={setIsInputShowing} socket={socket} databaseAction={setDatabase} />
             }

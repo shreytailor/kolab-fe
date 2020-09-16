@@ -16,9 +16,23 @@ type QuestionCardProps = {
 function QuestionCard({question} : QuestionCardProps) {
     return (
         <div className={styles.QuestionCard}>
-            <p>Question: {question.question}</p>
-            <p>Time Added: {question.time_created}</p>
-            <p>Is Answered: {question.is_answered}</p>
+            <div className={styles.verticalFlex}>
+                <div className={styles.questionBox}>
+                    <p>{question.question}</p>
+                </div>
+
+                <div className={styles.dynamicContent}>
+                    {
+                        question.is_answered?
+                        <div className={styles.green}></div>:
+                        <div className={styles.haveAnAnswer}>Have an answer?</div>
+                    }
+                </div>
+
+                <div className={styles.questionActions}>
+                    
+                </div>
+            </div>
         </div>
     )
 }
