@@ -15,6 +15,7 @@ import styles from './Dashboard.module.css';
 import Question from '../../models/Question';
 import Header from '../../components/header/Header';
 import Heading from '../../components/heading/Heading';
+import socket from './../../socket-connection';
 import PostInput from '../../components/postinput/PostInput';
 import questionGetAll from './../../dbactions/questionGetAll';
 import QuestionCard from '../../components/questionCard/QuestionCard';
@@ -33,7 +34,6 @@ function Dashboard() {
     }, [])
 
     // Performing actions whenever there is an update to the database.
-    const socket = io(`${process.env.REACT_APP_SERVER}`, {transports:['websocket'], 'forceNew':true });
     socket.on("update", async () => {
         console.log("An update is available.");
         questionGetAll().then(function (data) {
