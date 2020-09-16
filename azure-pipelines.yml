@@ -28,6 +28,7 @@ steps:
   env:
     REACT_APP_CLIENT_ID: '$(client_id)'
     REACT_APP_API: $(api)
+    REACT_APP_SERVER: $(server)
 
 - task: ArchiveFiles@2
   inputs:
