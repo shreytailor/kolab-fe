@@ -9,7 +9,6 @@ import styles from './PostInput.module.css';
 */
 import Question from './../../models/Question';
 import questionAdd from './../../dbactions/questionAdd';
-import questionGetAll from './../../dbactions/questionGetAll';
 
 type PostInputProps = {
     listener : React.Dispatch<React.SetStateAction<boolean>>,
@@ -31,11 +30,8 @@ function PostInput({listener, socket, databaseAction} : PostInputProps) {
 
                     if (text.length !== 0) {
                         await questionAdd(text).then(function() {
-                            socket.emit('update');
                             listener(false);
                         });
-
-                        window.location.reload();
                     }
 
                 }} className={styles.action}>Post Question</p>

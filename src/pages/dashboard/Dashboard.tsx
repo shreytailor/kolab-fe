@@ -31,8 +31,7 @@ function Dashboard() {
         questionGetAll().then(function (data) {
             setDatabase(data);
         })
-    }, [])
-
+    }, [isInputShowing])
 
     // Initially, we are doing the process of checking the logged-in status.
     const userCookies = new Cookies();
