@@ -30,12 +30,12 @@ function PostInput({listener, socket, databaseAction} : PostInputProps) {
                 <p onClick={async () => {
 
                     if (text.length !== 0) {
-                        await questionAdd(text);
-                        questionGetAll().then(function (data) {
-                            databaseAction(data);
+                        await questionAdd(text).then(function() {
+                            socket.emit('update');
+                            listener(false);
                         });
-                        socket.emit('update');
-                        listener(false);
+
+                        window.location.reload();
                     }
 
                 }} className={styles.action}>Post Question</p>
