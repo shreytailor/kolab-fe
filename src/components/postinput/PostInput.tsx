@@ -4,11 +4,19 @@
 import React, { useState } from 'react';
 import styles from './PostInput.module.css';
 
+/*
+    Imports for components, media.
+*/
+import Question from './../../models/Question';
+import questionAdd from './../../dbactions/questionAdd';
+import questionGetAll from './../../dbactions/questionGetAll';
+
 type PostInputProps = {
-    listener : React.Dispatch<React.SetStateAction<boolean>>
+    listener : React.Dispatch<React.SetStateAction<boolean>>,
+    databaseAction: React.Dispatch<React.SetStateAction<Question[]>>
 }
 
-function PostInput({listener} : PostInputProps) {
+function PostInput({listener, databaseAction} : PostInputProps) {
     const [text, setText] = useState("");
 
     return (
@@ -18,10 +26,14 @@ function PostInput({listener} : PostInputProps) {
             }} className={styles.inputarea} placeholder="Write your question here..."></textarea>
 
             <div className={styles.actions}>
-                <p onClick={() => {
+                <p onClick={async () => {
 
                     if (text.length !== 0) {
-                        // Add to the database.
+                        await questionAdd(text);
+                        questionGetAll().then(function (data) {
+                            databaseAction(data);
+                        })
+                        listener(false);
                     }
 
                 }} className={styles.action}>Post Question</p>
