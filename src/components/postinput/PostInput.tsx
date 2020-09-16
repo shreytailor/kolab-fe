@@ -12,11 +12,10 @@ import questionAdd from './../../dbactions/questionAdd';
 
 type PostInputProps = {
     listener : React.Dispatch<React.SetStateAction<boolean>>,
-    socket : SocketIOClient.Socket,
     databaseAction : React.Dispatch<React.SetStateAction<Question[]>>
 }
 
-function PostInput({listener, socket, databaseAction} : PostInputProps) {
+function PostInput({listener, databaseAction} : PostInputProps) {
     const [text, setText] = useState("");
 
     return (

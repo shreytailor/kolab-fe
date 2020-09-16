@@ -43,9 +43,28 @@
 }
 
 .QuestionCard .verticalFlex .dynamicContent {
-        margin: 1rem 0rem 1rem 0rem;
+        margin: 1rem 0rem 0.5rem 0rem;
 }
 
 .QuestionCard .verticalFlex .haveAnAnswer {
         color: rgb(83, 165, 83);
+}
+
+.QuestionCard .verticalFlex .questionActions .button {
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-right: 0.5rem;
+        border-radius: 0.2rem;
+        transition: all 0.1s ease-in;
+        background-color: rgb(226, 226, 226);
+        padding: 0.3rem 0.55rem 0.3rem 0.55rem;
+}
+
+.QuestionCard .verticalFlex .questionActions .button:hover {
+        filter: brightness(95%);
+}
+
+.QuestionCard .verticalFlex .questionActions .delete {
+        color: rgb(184, 32, 32);
 }

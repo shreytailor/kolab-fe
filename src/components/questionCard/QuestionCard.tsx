@@ -8,12 +8,14 @@ import styles from './QuestionCard.module.css';
     Imports for components, media.
 */
 import Question from './../../models/Question';
+import questionDelete from './../../dbactions/questionDelete';
 
 type QuestionCardProps = {
-    question : Question
+    question : Question,
+    doReset: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-function QuestionCard({question} : QuestionCardProps) {
+function QuestionCard({question, doReset} : QuestionCardProps) {
     return (
         <div className={styles.QuestionCard}>
             <div className={styles.verticalFlex}>
@@ -30,7 +32,17 @@ function QuestionCard({question} : QuestionCardProps) {
                 </div>
 
                 <div className={styles.questionActions}>
-                    
+                    <button className={[styles.button, styles.speak].join(' ')} onClick={function () {
+                        const speaker = new SpeechSynthesisUtterance();
+                        speaker.text = question.question;
+                        window.speechSynthesis.speak(speaker);
+                    }}>Speak</button>
+                    <button className={[styles.button, styles.delete].join(' ')} onClick={function () {
+                        questionDelete(question.questionId).then(function(data) {
+                            doReset(true);
+                            doReset(false);
+                        })
+                    }}>Delete</button>
                 </div>
             </div>
         </div>
