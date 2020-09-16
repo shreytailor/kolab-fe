@@ -18,19 +18,29 @@ import PostInput from '../../components/postinput/PostInput';
 import questionGetAll from './../../dbactions/questionGetAll';
 import QuestionCard from '../../components/questionCard/QuestionCard';
 
-
 function Dashboard() {
     // Integrating states for showing/hiding the Post input box.
     const [ isInputShowing, setIsInputShowing ] = useState(false);
     const [ database, setDatabase ] = useState(Array<Question>()); 
     const [ reset, doReset ] = useState(false);
 
-    // When the user first opens the dashboard, we must set the initial cards.
-    useEffect(() => {
+    function fetchQuestions() {
         questionGetAll().then(function (data) {
             setDatabase(data);
         })
-    }, [isInputShowing, reset])
+    }
+
+    /*
+        This approach of updating the dashboard with the latest questions was probably the most in-
+        but it was required because the API speed was such (slow) that it was causing some major
+        issues. In real life deployment, this can easily be avoided by using a faster speed for API.
+    */
+    useEffect(() => {
+        fetchQuestions();
+    }, [reset])
+    useEffect(() => {
+        fetchQuestions();
+    }, [isInputShowing])
 
     // Initially, we are doing the process of checking the logged-in status.
     const userCookies = new Cookies();

@@ -7,7 +7,7 @@
         width: 100%;
         position: relative;
         background-color: white;
-        padding: 1.2rem 1rem 1.2rem 1rem;
+        padding: 1.2rem 1.4rem 1.2rem 1.4rem;
         margin-top: 1rem;
         margin-bottom: 1rem;
         border-radius: 0.5rem;
@@ -15,20 +15,13 @@
         font-size: 1.1rem;
 }
 
-.QuestionCard .green, .QuestionCard .red {
+.QuestionCard .green {
         position: absolute;
         top: 0;
         left: 0;        
         height: 100%;
-        width: 0.5rem;
-}
-
-.QuestionCard .green {
+        width: 0.4rem;
         background-color: rgb(106, 197, 106);
-}
-
-.QuestionCard .red {
-        background-color: rgb(206, 123, 123);
 }
 
 .QuestionCard .verticalFlex {
@@ -43,11 +36,41 @@
 }
 
 .QuestionCard .verticalFlex .dynamicContent {
-        margin: 1rem 0rem 0.5rem 0rem;
+        margin: 1rem 0rem 1rem 0rem;
+}
+
+.QuestionCard .verticalFlex .dynamicContent .answersection .title {
+        color: green;
+        font-weight: 400;
+        margin-bottom: 0.3rem;
+}
+
+.QuestionCard .verticalFlex .dynamicContent .answersection .answer {
+        font-size: 1rem;
 }
 
 .QuestionCard .verticalFlex .haveAnAnswer {
         color: rgb(83, 165, 83);
+        cursor: pointer;
+}
+
+.QuestionCard .verticalFlex .textarea {
+        width: 100%;
+        resize: none;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        font-family: inherit; 
+}
+
+.QuestionCard .verticalFlex .postanswer, .QuestionCard .verticalFlex .cancelanswer {
+        cursor: pointer;
+        display: inline;
+        margin-right: 1rem;
+        color: rgb(122, 122, 122);
+}
+
+.QuestionCard .verticalFlex .postanswer:hover, .QuestionCard .verticalFlex .cancelanswer:hover {
+        text-decoration: underline;
 }
 
 .QuestionCard .verticalFlex .questionActions .button {
