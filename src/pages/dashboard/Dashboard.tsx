@@ -33,7 +33,7 @@ function Dashboard() {
     }, [])
 
     // Performing actions whenever there is an update to the database.
-    const socket = io(`${process.env.REACT_APP_SERVER}`);
+    const socket = io(`${process.env.REACT_APP_SERVER}`, {transports:['websocket'], upgrade: false});
     socket.on("update", async () => {
         console.log("An update is available.");
         questionGetAll().then(function (data) {
