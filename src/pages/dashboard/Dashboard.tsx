@@ -35,7 +35,6 @@ function Dashboard() {
 
     // Performing actions whenever there is an update to the database.
     socket.on("update", async () => {
-        console.log("An update is available.");
         questionGetAll().then(function (data) {
             setDatabase(data);
         })

@@ -1,4 +1,4 @@
 import io from 'socket.io-client';
-let socket = io(`${process.env.REACT_APP_SERVER}`, {transports:['websocket'], 'forceNew':false });
+let socket = io(`${process.env.REACT_APP_SERVER}`);
 
-    export default socket;
+export default socket;

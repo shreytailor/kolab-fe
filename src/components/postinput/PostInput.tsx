@@ -7,9 +7,7 @@ import styles from './PostInput.module.css';
 /*
     Imports for components, media.
 */
-import Question from './../../models/Question';
 import questionAdd from './../../dbactions/questionAdd';
-import questionGetAll from './../../dbactions/questionGetAll';
 
 type PostInputProps = {
     listener : React.Dispatch<React.SetStateAction<boolean>>,
