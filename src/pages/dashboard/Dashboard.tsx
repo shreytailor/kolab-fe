@@ -2,7 +2,7 @@
     React Imports (including stylesheets).
 */
 import Cookies from 'universal-cookie';
-import io from 'socket.io-client';
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
@@ -33,13 +33,6 @@ function Dashboard() {
         })
     }, [])
 
-    // Performing actions whenever there is an update to the database.
-    socket.on("update", async () => {
-        questionGetAll().then(function (data) {
-            setDatabase(data);
-        })
-    })
-
 
     // Initially, we are doing the process of checking the logged-in status.
     const userCookies = new Cookies();
@@ -67,6 +60,14 @@ function Dashboard() {
         )
     }
 
+    // Performing actions whenever there is an update to the database.
+    socket.on("update", () => {
+        console.log("update");
+        axios.get(`${process.env.REACT_APP_API}/question/getAll`).then(function (response) {
+            setDatabase(response.data);
+        })
+    })
+
     // Finally render the Dashboard to the user.
     return (
         <div className="globalpadding">
@@ -85,7 +86,7 @@ function Dashboard() {
             </div>
             
             {isInputShowing &&
-                <PostInput listener={setIsInputShowing} socket={socket} />
+                <PostInput listener={setIsInputShowing} socket={socket} databaseAction={setDatabase} />
             }
 
             <div className={styles.questions}>

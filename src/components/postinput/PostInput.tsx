@@ -7,14 +7,17 @@ import styles from './PostInput.module.css';
 /*
     Imports for components, media.
 */
+import Question from './../../models/Question';
 import questionAdd from './../../dbactions/questionAdd';
+import questionGetAll from './../../dbactions/questionGetAll';
 
 type PostInputProps = {
     listener : React.Dispatch<React.SetStateAction<boolean>>,
-    socket: SocketIOClient.Socket
+    socket : SocketIOClient.Socket,
+    databaseAction : React.Dispatch<React.SetStateAction<Question[]>>
 }
 
-function PostInput({listener, socket} : PostInputProps) {
+function PostInput({listener, socket, databaseAction} : PostInputProps) {
     const [text, setText] = useState("");
 
     return (
@@ -28,6 +31,9 @@ function PostInput({listener, socket} : PostInputProps) {
 
                     if (text.length !== 0) {
                         await questionAdd(text);
+                        questionGetAll().then(function (data) {
+                            databaseAction(data);
+                        });
                         socket.emit('update');
                         listener(false);
                     }
