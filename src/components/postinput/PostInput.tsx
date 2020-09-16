@@ -13,10 +13,10 @@ import questionGetAll from './../../dbactions/questionGetAll';
 
 type PostInputProps = {
     listener : React.Dispatch<React.SetStateAction<boolean>>,
-    databaseAction: React.Dispatch<React.SetStateAction<Question[]>>
+    socket: SocketIOClient.Socket
 }
 
-function PostInput({listener, databaseAction} : PostInputProps) {
+function PostInput({listener, socket} : PostInputProps) {
     const [text, setText] = useState("");
 
     return (
@@ -30,9 +30,7 @@ function PostInput({listener, databaseAction} : PostInputProps) {
 
                     if (text.length !== 0) {
                         await questionAdd(text);
-                        questionGetAll().then(function (data) {
-                            databaseAction(data);
-                        })
+                        socket.emit('update');
                         listener(false);
                     }
 

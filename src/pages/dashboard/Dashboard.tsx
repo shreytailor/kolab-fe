@@ -2,6 +2,7 @@
     React Imports (including stylesheets).
 */
 import Cookies from 'universal-cookie';
+import io from 'socket.io-client';
 import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
@@ -22,28 +23,39 @@ import QuestionCard from '../../components/questionCard/QuestionCard';
 function Dashboard() {
     // Integrating states for showing/hiding the Post input box.
     const [ isInputShowing, setIsInputShowing ] = useState(false);
-    const [ database, setDatabase ] = useState(Array<Question>());
+    const [ database, setDatabase ] = useState(Array<Question>());  
 
     // When the user first opens the dashboard, we must set the initial cards.
     useEffect(() => {
         questionGetAll().then(function (data) {
             setDatabase(data);
         })
+    }, [])
+
+    // Performing actions whenever there is an update to the database.
+    const socket = io(`${process.env.REACT_APP_SERVER}`);
+    socket.on("update", async () => {
+        console.log("An update is available.");
+        questionGetAll().then(function (data) {
+            setDatabase(data);
+        })
     })
 
+
     // Initially, we are doing the process of checking the logged-in status.
-    const cookies = new Cookies();
+    const userCookies = new Cookies();
     let history = useHistory();
     let tokenId : string;
     
     try {
-        tokenId = cookies.get("loginDets")["tokenId"];
+        tokenId = userCookies.get("loginDets")["tokenId"];
     } catch (error) {
         return <Redirect to = "/signin"/>
     }
 
     // If the user was logged-in, try to extract their name from the cookie set up.
-    let name:string = cookies.get("loginDets")["name"];
+    let name:string = userCookies.get("loginDets")["name"];
+
 
     // Iterating through each item in the database, and creating card for it.
     const cards = [];
@@ -67,14 +79,14 @@ function Dashboard() {
                         setIsInputShowing(true);
                     }} className={styles.postbutton}>Post</button>
                     <button onClick={() => {
-                        cookies.remove("loginDets");
+                        userCookies.remove("loginDets");
                         history.push("/");
                     }} className={styles.signoutbutton}>Sign Out</button>
                 </div>
             </div>
             
             {isInputShowing &&
-                <PostInput listener={setIsInputShowing} databaseAction={setDatabase} />
+                <PostInput listener={setIsInputShowing} socket={socket} />
             }
 
             <div className={styles.questions}>
