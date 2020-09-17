@@ -26,15 +26,6 @@ function Dashboard() {
     const [ isInputShowing, setIsInputShowing ] = useState(false);
     const [ database, setDatabase ] = useState(Array<Question>()); 
     const [ reset, doReset ] = useState(false);
-    const [ active, setActive ] = useState(Number)
-
-    // Settings/Listeners for socket.io
-    ioclient.on("join", function(msg : number) {
-        setActive(msg);
-    })
-    ioclient.on("leave", function(msg : number) {
-        setActive(msg);
-    })
 
     function fetchQuestions() {
         questionGetAll().then(function (data) {
@@ -87,10 +78,6 @@ function Dashboard() {
             <div className={styles.dashactions}>
                 <p className={styles.greeting}>Welcome {name}!</p>
                 <div className={styles.buttons}>
-                    <div className={styles.activediv}>
-                        <span className={styles.dot}></span>
-                        <p className={styles.active}>{active} users active.</p>
-                    </div>
                     <button onClick={(event) => {
                         setIsInputShowing(true);
                     }} className={styles.postbutton}>Post</button>
