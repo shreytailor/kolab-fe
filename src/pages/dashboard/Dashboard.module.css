@@ -16,6 +16,24 @@
     margin-right: 1rem;
 }
 
+.dashactions .buttons .activediv {
+    display: inline;
+}
+
+.dashactions .buttons .activediv .dot {
+    height: 15px;
+    width: 15px;
+    background-color: rgb(119, 212, 96);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.dashactions .buttons .activediv .active {
+    margin-right: 1rem;
+    display: inline;
+}
+
 .dashactions .buttons .signoutbutton {
     background-color: #2A3FB4;
     color: white;
@@ -75,9 +93,7 @@
     .questions {
         width: 100%;
     }
-}
 
-@media (max-width: 500px) {
     .dashactions {
         flex-direction: column;
     }
@@ -85,4 +101,8 @@
     .dashactions p {
         margin: 0rem 0rem 1rem 0rem;
     }
+}
+
+@media (max-width: 500px) {
+    
 }

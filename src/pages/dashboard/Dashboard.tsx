@@ -5,6 +5,7 @@ import Cookies from 'universal-cookie';
 import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import io from 'socket.io-client';
 import './../../App.css';
 
 /*
@@ -18,11 +19,22 @@ import PostInput from '../../components/postinput/PostInput';
 import questionGetAll from './../../dbactions/questionGetAll';
 import QuestionCard from '../../components/questionCard/QuestionCard';
 
+const ioclient = io.connect(`${process.env.REACT_APP_SERVER}`, {transports: ["websocket"]});
+
 function Dashboard() {
     // Integrating states for showing/hiding the Post input box.
     const [ isInputShowing, setIsInputShowing ] = useState(false);
     const [ database, setDatabase ] = useState(Array<Question>()); 
     const [ reset, doReset ] = useState(false);
+    const [ active, setActive ] = useState(Number)
+
+    // Settings/Listeners for socket.io
+    ioclient.on("join", function(msg : number) {
+        setActive(msg);
+    })
+    ioclient.on("leave", function(msg : number) {
+        setActive(msg);
+    })
 
     function fetchQuestions() {
         questionGetAll().then(function (data) {
@@ -75,6 +87,10 @@ function Dashboard() {
             <div className={styles.dashactions}>
                 <p className={styles.greeting}>Welcome {name}!</p>
                 <div className={styles.buttons}>
+                    <div className={styles.activediv}>
+                        <span className={styles.dot}></span>
+                        <p className={styles.active}>{active} users active.</p>
+                    </div>
                     <button onClick={(event) => {
                         setIsInputShowing(true);
                     }} className={styles.postbutton}>Post</button>
