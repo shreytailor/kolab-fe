@@ -2,10 +2,9 @@
     React Imports (including stylesheets).
 */
 import Cookies from 'universal-cookie';
-import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
-import io from 'socket.io-client';
+import React, { useState, useEffect } from 'react';
 import './../../App.css';
 
 /*
@@ -18,8 +17,6 @@ import Heading from '../../components/heading/Heading';
 import PostInput from '../../components/postinput/PostInput';
 import questionGetAll from './../../dbactions/questionGetAll';
 import QuestionCard from '../../components/questionCard/QuestionCard';
-
-const ioclient = io.connect(`${process.env.REACT_APP_SERVER}`, {transports: ["websocket"]});
 
 function Dashboard() {
     // Integrating states for showing/hiding the Post input box.

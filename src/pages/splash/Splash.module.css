@@ -169,6 +169,10 @@
   font-weight: 400;
 }
 
+.footer .shield {
+  cursor: pointer;
+}
+
 
 /* 
   ---------------------------------------- 

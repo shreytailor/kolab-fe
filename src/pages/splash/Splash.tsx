@@ -18,6 +18,7 @@ import logofooter from "./../../resources/logo_footer.png";
 function Splash() {
     useScript("https://platform.twitter.com/widgets.js");
     useScript("https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v8.0");
+    useScript("https://staticcdn.co.nz/embed/embed.js");
 
     return(
         <div className={styles.Splash}>
@@ -69,6 +70,7 @@ function Splash() {
                     <img className={styles.logo} src={logofooter} alt="kolab-logo"/>
                 </div>
                 <p className={styles.credit}>Developed by Shrey Tailor.</p>
+                <img className={styles.shield} alt="shielded" id="shielded-logo" src="https://shielded.co.nz/img/custom-logo.png" height="30" width="30"></img>
             </div>
         </div>
     )
