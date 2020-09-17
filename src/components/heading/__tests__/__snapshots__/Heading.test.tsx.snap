@@ -9,10 +9,12 @@ exports[`matches snapshot 1`] = `
       className="string"
       style={
         Object {
-          "fontSize": undefined,
+          "fontSize": "1rem",
         }
       }
-    />
+    >
+      Testing
+    </h3>
   </div>
 </div>
 `;
