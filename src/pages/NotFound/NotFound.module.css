@@ -1,0 +1,38 @@
+/* 
+---------------------------------------- 
+            404 PAGE STYLES
+---------------------------------------- 
+*/
+.NotFound {
+    position: relative;
+    height: 100vh;
+}
+
+.center {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.center .bold {
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.center .secondary {
+    font-size: 1.5rem;
+}
+
+.center .gohome {
+    border: none;
+    color: white;
+    outline: none;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    border-radius: 1rem;
+    background-color: #1F3196;
+    padding: 0.7rem 2rem 0.7rem 2rem;
+}

@@ -2,7 +2,7 @@
     React Imports (including stylesheets).
 */
 import React from 'react';
-import {Route, BrowserRouter as Router} from 'react-router-dom';
+import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
 import './App.css';
 
 /*
@@ -11,6 +11,7 @@ import './App.css';
 import Splash from './pages/splash/Splash';
 import SignIn from './pages/signin/SignIn';
 import Dashboard from './pages/dashboard/Dashboard';
+import NotFound from './pages/NotFound/NotFound';
 
 
 /**
@@ -20,9 +21,12 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Route exact path="/" component={Splash}/>
-        <Route exact path="/signin" component={SignIn}/>
-        <Route exact path="/dashboard" component={Dashboard}/>
+        <Switch>
+          <Route exact path="/" component={Splash}/>
+          <Route exact path="/signin" component={SignIn}/>
+          <Route exact path="/dashboard" component={Dashboard}/>
+          <Route component={NotFound}/>
+        </Switch>
       </Router>
     </div>
   );
