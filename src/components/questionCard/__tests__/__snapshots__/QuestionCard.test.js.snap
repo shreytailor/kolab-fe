@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="QuestionCard"
+>
+  <div
+    className="verticalFlex"
+  >
+    <div
+      className="questionBox"
+    >
+      <p />
+    </div>
+    <div
+      className="dynamicContent"
+    >
+      <div>
+        <p
+          className="haveAnAnswer"
+          onClick={[Function]}
+        >
+          Have an answer?
+        </p>
+      </div>
+    </div>
+    <div
+      className="questionActions"
+    >
+      <button
+        className="button speak"
+        onClick={[Function]}
+      >
+        Speak
+      </button>
+      <button
+        className="button delete"
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div>
+  <div
+    className="Header"
+  >
+    <div
+      className="headerbar"
+    >
+      <img
+        alt="kolab-logo"
+        className="logo"
+        src="logo.png"
+      />
+    </div>
+  </div>
+</div>
+`;

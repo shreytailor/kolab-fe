@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="root"
+>
+  <textarea
+    className="inputarea"
+    onChange={[Function]}
+    placeholder="Write your question here..."
+  />
+  <div
+    className="actions"
+  >
+    <p
+      className="action"
+      onClick={[Function]}
+    >
+      Post Question
+    </p>
+    <p
+      className="action"
+      onClick={[Function]}
+    >
+      Cancel
+    </p>
+  </div>
+</div>
+`;
