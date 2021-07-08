@@ -8,7 +8,6 @@
     <img alt="types:typescript" src="https://img.shields.io/badge/Types-Typescript-important">
 </div>
 <br>
-<a href="https://kolab17.azurewebsites.net">Click here</a> to view the live deployment of the application.
 
 #### Table of Contents
 1. [Project Brief](#project-brief)
